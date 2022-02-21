@@ -100,7 +100,7 @@ resource "aws_cloudwatch_metric_alarm" "custom-cpu-alarm-scaledown" {
   namespace                 = "AWS/EC2"
   period                    = "60"
   statistic                 = "Average"
-  threshold                 = "20"
+  threshold                 = "60"
   
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.custom-ASG.name
