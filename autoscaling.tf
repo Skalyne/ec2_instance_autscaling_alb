@@ -20,6 +20,7 @@ resource "aws_launch_configuration" "custom-launch-config" {
   instance_type = "t2.micro"
   security_groups = [aws_security_group.custom-elb-sg.id]
   key_name = aws_key_pair.my_aws_key.key_name
+  iam_instance_profile = "${aws_iam_instance_profile.web-instance-profile.id}"
   user_data = "#!/bin/bash\napt-get update\napt-get -y install net-tools nginx\nMYDATA=$(ifconfig)\necho '<h2> Webserver with autoscaling in a Load Balancer IP</h2><br>made by Theo Kratz <br>It is beeing fun<br> data:'$MYDATA > /var/www/html/index.html"
 
   lifecycle {
