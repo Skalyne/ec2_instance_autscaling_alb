@@ -33,7 +33,7 @@ resource "aws_iam_role_policy" "web_iam_role_policy" {
     {
       "Effect": "Allow",
       "Action": ["s3:ListBucket"],
-      "Resource": ["arn:aws:s3:::random-web-bucket-name-example"]
+      "Resource": ["${aws_s3_bucket.web-bucket.arn}"]
     },
     {
       "Effect": "Allow",
@@ -42,7 +42,7 @@ resource "aws_iam_role_policy" "web_iam_role_policy" {
         "s3:GetObject",
         "s3:DeleteObject"
       ],
-      "Resource": ["arn:aws:s3:::random-web-bucket-name-example/*"]
+      "Resource": ["${aws_s3_bucket.web-bucket.arn}"]
     }
   ]
 }
