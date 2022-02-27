@@ -52,8 +52,6 @@ Once script is finished, you will get an output with the dns servername to acces
 
 
 ## TODO:
-autoscaling and descaling has been tested without load balancer conneting to the ec2 and make in stress tests, as instance needs to be reachable just by load balancer, port 22 was closed and I´m not able to test in the same way, userdata script seems to have different behave so couldn´t test it, but code works.
-
 Sometimes terraform destroy get stucks deataching gw, That is because is taking long lo destroy other resources, launch it again a few minutes before 
 
 As this is a simple proyect consider that you could have some resources already in use as key-pair name or cidr_blocks, feel free to change it.
